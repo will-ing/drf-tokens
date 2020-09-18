@@ -3,11 +3,11 @@ version: '3'
 services:
   web:
     build: .
-    command: gunicorn blog_project.wsgi:application --bind 0.0.0.0:8000 --workers 4
+    command: gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 4
     volumes:
       - .:/code
     ports:
-      - "3001:3000"
+      - "8001:8000"
     depends_on:
       - db
   db:
